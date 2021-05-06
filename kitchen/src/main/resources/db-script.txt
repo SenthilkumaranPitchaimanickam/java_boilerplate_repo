@@ -1,0 +1,23 @@
+Kitchen Table :
+------------------------------------------------------------------------------------
+CREATE TABLE kitchen(
+	id bigint NOT NULL IDENTITY(1,1)  primary key,
+	datetime datetime2 (7) NULL,
+	orderid varchar(255) NULL,
+	server varchar(255) NULL,
+	status varchar(255) NULL,
+	tablenumber varchar(255) NULL)
+
+	
+CREATE TABLE kitchen_item(
+	id bigint NOT NULL IDENTITY(1,1)  primary key,
+	itemno varchar(255) NULL,
+	name varchar(255) NULL,
+	preparation varchar(255) NULL,
+	quantity varchar(255) NULL,
+	section varchar(255) NULL,
+	status varchar(255) NULL,
+	kitchen_id bigint NULL foreign key references kitchen(id))
+
+select * from kitchen
+select * from kitchen_item
